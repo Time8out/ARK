@@ -1,0 +1,132 @@
+.member-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-form .field-label {
+  color: #e6ddd4;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.member-form input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 16px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.member-form input::placeholder {
+  color: #756a63;
+}
+
+.member-form input:focus {
+  border-color: #d99b52;
+}
+
+.member-form input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.member-form input[type='date'] {
+  color-scheme: dark;
+}
+
+.member-form .form-error {
+  background: rgba(220, 60, 50, 0.12);
+  border: 1px solid rgba(220, 60, 50, 0.35);
+  color: #f2a29c;
+  font-size: 13px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 0 0 16px;
+}
+
+.member-form .form-success {
+  background: rgba(90, 180, 110, 0.12);
+  border: 1px solid rgba(90, 180, 110, 0.35);
+  color: #a8e0b6;
+  font-size: 13px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 0 0 16px;
+}
+
+.member-form .password-field {
+  position: relative;
+}
+
+.member-form .password-field input {
+  padding-right: 44px;
+}
+
+.member-form .eye-toggle {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #8a7d74;
+  display: flex;
+}
+
+.member-form .eye-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.member-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.member-form .cancel-btn {
+  flex: 1;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbbfb6;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.member-form .cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.member-form .submit-btn {
+  flex: 1;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  background: linear-gradient(135deg, #a8703c 0%, #7a4a24 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.member-form .submit-btn:hover {
+  filter: brightness(1.08);
+}
+
+.member-form .submit-btn:disabled,
+.member-form .cancel-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

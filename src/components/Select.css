@@ -1,0 +1,90 @@
+.custom-select {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.custom-select-trigger {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.custom-select-trigger:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-select-trigger.open,
+.custom-select-trigger:focus {
+  border-color: #d99b52;
+  outline: none;
+}
+
+.custom-select-trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.custom-select-trigger .chevron-icon {
+  width: 16px;
+  height: 16px;
+  color: #8a7d74;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.custom-select-trigger.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.custom-select-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #171310;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+  z-index: 20;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.custom-select-option {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #cbbfb6;
+  font-size: 14px;
+  font-family: inherit;
+  text-align: left;
+  padding: 11px 14px;
+  cursor: pointer;
+}
+
+.custom-select-option:hover {
+  background: rgba(217, 155, 82, 0.15);
+  color: #f4ede4;
+}
+
+.custom-select-option.selected {
+  background: rgba(217, 155, 82, 0.22);
+  color: #d99b52;
+  font-weight: 600;
+}
