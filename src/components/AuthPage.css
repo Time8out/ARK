@@ -45,7 +45,7 @@
 
 .brand-logo {
   width: 100%;
-  max-width: 140px;
+  max-width: 100px;
   height: auto;
 }
 
@@ -59,7 +59,7 @@
   }
 
   .brand-logo {
-    max-width: 100px;
+    max-width: 72px;
   }
 }
 
