@@ -27,6 +27,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: padding-bottom 0.15s ease;
+}
+
+.auth-content.keyboard-spacer {
+  padding-bottom: 60vh;
 }
 
 .brand {

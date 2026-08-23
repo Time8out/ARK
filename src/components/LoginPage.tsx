@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import backgroundImage from '../assets/7882808.jpg'
 import arkLogo from '../assets/ark-logo.png'
 import { supabase } from '../lib/supabaseClient'
-import { handleFieldFocus, useKeyboardScrollFix } from '../lib/scrollFieldIntoView'
+import { handleFieldBlur, handleFieldFocus, useKeyboardScrollFix } from '../lib/scrollFieldIntoView'
 import { EyeIcon, ShieldIcon } from './icons'
 import './AuthPage.css'
 
@@ -62,6 +62,7 @@ function LoginPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             onFocus={handleFieldFocus}
+            onBlur={handleFieldBlur}
             autoComplete="email"
             required
             disabled={submitting}
@@ -78,6 +79,7 @@ function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onFocus={handleFieldFocus}
+              onBlur={handleFieldBlur}
               autoComplete="current-password"
               required
               disabled={submitting}
