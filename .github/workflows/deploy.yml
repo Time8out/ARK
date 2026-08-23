@@ -30,19 +30,19 @@ jobs:
 
       - name: Verify Supabase secrets are set
         run: |
-          if [ -z "${{ secrets.VITE_SUPABASE_URL }}" ]; then
-            echo "::error::VITE_SUPABASE_URL secret is empty or missing. Add it under Settings > Secrets and variables > Actions > Secrets (repository secrets, not an environment or a variable)."
+          if [ -z "${{ secrets.VITE_SUPABASE_URL || vars.VITE_SUPABASE_URL }}" ]; then
+            echo "::error::VITE_SUPABASE_URL is empty or missing from both secrets and variables. Add it under Settings > Secrets and variables > Actions > Secrets tab, as a repository secret (not tied to an environment)."
             exit 1
           fi
-          if [ -z "${{ secrets.VITE_SUPABASE_ANON_KEY }}" ]; then
-            echo "::error::VITE_SUPABASE_ANON_KEY secret is empty or missing. Add it under Settings > Secrets and variables > Actions > Secrets (repository secrets, not an environment or a variable)."
+          if [ -z "${{ secrets.VITE_SUPABASE_ANON_KEY || vars.VITE_SUPABASE_ANON_KEY }}" ]; then
+            echo "::error::VITE_SUPABASE_ANON_KEY is empty or missing from both secrets and variables. Add it under Settings > Secrets and variables > Actions > Secrets tab, as a repository secret (not tied to an environment)."
             exit 1
           fi
 
       - run: npm run build
         env:
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || vars.VITE_SUPABASE_ANON_KEY }}
 
       - uses: actions/configure-pages@v5
 
