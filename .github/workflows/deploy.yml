@@ -17,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
     steps:
       - uses: actions/checkout@v4
 
@@ -26,6 +27,17 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      - name: Verify Supabase secrets are set
+        run: |
+          if [ -z "${{ secrets.VITE_SUPABASE_URL }}" ]; then
+            echo "::error::VITE_SUPABASE_URL secret is empty or missing. Add it under Settings > Secrets and variables > Actions > Secrets (repository secrets, not an environment or a variable)."
+            exit 1
+          fi
+          if [ -z "${{ secrets.VITE_SUPABASE_ANON_KEY }}" ]; then
+            echo "::error::VITE_SUPABASE_ANON_KEY secret is empty or missing. Add it under Settings > Secrets and variables > Actions > Secrets (repository secrets, not an environment or a variable)."
+            exit 1
+          fi
 
       - run: npm run build
         env:
