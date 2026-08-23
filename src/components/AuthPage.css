@@ -44,6 +44,20 @@
   height: auto;
 }
 
+@media (max-width: 480px) {
+  .auth-content {
+    padding: 32px 20px 24px;
+  }
+
+  .brand {
+    margin-bottom: 20px;
+  }
+
+  .brand-logo {
+    max-width: 100px;
+  }
+}
+
 .auth-card {
   width: 100%;
   background: rgba(17, 13, 12, 0.72);

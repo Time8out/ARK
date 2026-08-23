@@ -3,12 +3,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import backgroundImage from '../assets/7882808.jpg'
 import arkLogo from '../assets/ark-logo.png'
 import { supabase } from '../lib/supabaseClient'
-import { handleFieldFocus } from '../lib/scrollFieldIntoView'
+import { handleFieldFocus, useKeyboardScrollFix } from '../lib/scrollFieldIntoView'
 import { EyeIcon, ShieldIcon } from './icons'
 import './AuthPage.css'
 
 function SignUpPage() {
   const navigate = useNavigate()
+  useKeyboardScrollFix()
   const [showPassword, setShowPassword] = useState(false)
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
